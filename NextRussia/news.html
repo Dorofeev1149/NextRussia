@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Новости — МойПроект</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0d0d0d;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
+    }
+
+    header {
+      background-color: #0d0d0d;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px #ffcc00;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #ffcc00;
+      text-shadow: 0 0 10px #ffcc00;
+      margin: 0;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+      text-shadow: 0 0 5px #ffcc00;
+    }
+
+    .burger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: #ffcc00;
+      margin: 4px 0;
+      transition: 0.3s;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background-color: #111;
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ffcc00;
+    }
+
+    .mobile-nav a {
+      color: #ccc;
+      text-decoration: none;
+      margin: 10px 0;
+      font-weight: 500;
+    }
+
+    .mobile-nav a:hover {
+      color: #ffcc00;
+    }
+
+    .news-section {
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .news-card {
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .news-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .news-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      background-color: #333;
+    }
+
+    .news-content {
+      padding: 20px;
+    }
+
+    .news-title {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .news-text {
+      font-size: 14px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .burger {
+        display: flex;
+      }
+
+      .mobile-nav.active {
+        display: flex;
+      }
+
+      header {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 22px;
+      }
+    }
+
+    @media (min-width: 1000px) {
+      .news-section {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>МойПроект</h1>
+    <nav>
+      <a href="#">Главная</a>
+      <a href="#">О нас</a>
+      <a href="#">Новости</a>
+      <a href="#">Контакты</a>
+    </nav>
+    <div class="burger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#">Главная</a>
+      <a href="#">О нас</a>
+      <a href="#">Новости</a>
+      <a href="#">Контакты</a>
+    </div>
+  </header>
+
+  <section class="news-section">
+
+    <div class="news-card">
+      <img src="https://via.placeholder.com/600x400" alt="News Image" class="news-image">
+      <div class="news-content">
+        <div class="news-title">Заголовок новости 1</div>
+        <div class="news-text">
+          Краткое описание события. Здесь можно рассказать, что произошло, где и почему это важно.
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="https://via.placeholder.com/600x400" alt="News Image" class="news-image">
+      <div class="news-content">
+        <div class="news-title">Заголовок новости 2</div>
+        <div class="news-text">
+          Ещё одна новость, которая заслуживает внимания. Можно добавить ссылку или кнопку "Читать далее".
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="https://via.placeholder.com/600x400" alt="News Image" class="news-image">
+      <div class="news-content">
+        <div class="news-title">Заголовок новости 3</div>
+        <div class="news-text">
+          Этот блок легко масштабируется. Просто добавляй новые карточки с фото и текстом.
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <img src="https://via.placeholder.com/600x400" alt="News Image" class="news-image">
+      <div class="news-content">
+        <div class="news-title">Заголовок новости 4</div>
+        <div class="news-text">
+          Четвёртая новость добавлена! Она автоматически перейдёт на новую строку, если экран слишком широкий.
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('mobileNav');
+      nav.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
