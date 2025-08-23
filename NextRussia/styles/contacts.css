@@ -1,0 +1,25 @@
+.icons {
+    width: 35px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.block_contacts {
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.block_contacts:hover {
+    background-color: #363636;
+}
+
+.block_contacts div {
+    display: inline-block;
+}
+
+.text_contacts {
+    font-size: 26px;
+    margin-left: 8px;
+    color: #ffcc00;
+    text-shadow: 0 0 5px #ffcc00;
+}
