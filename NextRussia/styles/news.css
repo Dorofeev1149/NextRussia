@@ -1,7 +1,7 @@
 .news-section {
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(390px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(0.33fr, 1fr));
     gap: 30px;
 }
 
@@ -102,4 +102,5 @@
     width: 65%;
     object-fit: cover;
     background-color: #333;
+
 }
